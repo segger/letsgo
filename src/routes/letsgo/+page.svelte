@@ -1,5 +1,8 @@
-<script>
+<script lang="ts">
+  import type { Departure } from '../../components/departures';
+  
   export let data;
+  let departures: Departure[] = data.departures;
 </script>
 
 <svelte:head>
@@ -8,11 +11,9 @@
 </svelte:head>
 
 <div class="text-column">
-  <h1>Fetch from API in svelte</h1>
-
-  <ul>
-    {#each data.summaries as { slug, title }}
-      <li>{slug} - {title}</li>
+  <ul data-testid="departure-list">
+    {#each departures as departure}
+      <li>{departure.direction} - {departure.name} - {departure.shortName} - {departure.platform} - {departure.estimatedOtherwisePlannedTime} - {departure.isCancelled}</li>
     {/each}
   </ul>
 </div>

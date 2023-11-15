@@ -7,8 +7,7 @@ export async function fetchDepartures() {
       {
         headers: {
           Accept: 'application/json',
-          Authorization:
-            `Bearer ${API_AUTHORIZATION_HEADER}`
+          Authorization: `Bearer ${API_AUTHORIZATION_HEADER}`
         }
       }
     );
