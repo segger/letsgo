@@ -1,3 +1,5 @@
+import { API_AUTHORIZATION_HEADER } from '$env/static/private';
+
 export async function fetchDepartures() {
   try {
     const response = await fetch(
@@ -6,7 +8,7 @@ export async function fetchDepartures() {
         headers: {
           Accept: 'application/json',
           Authorization:
-            'Bearer '
+            `Bearer ${API_AUTHORIZATION_HEADER}`
         }
       }
     );
